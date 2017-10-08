@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>PROJECT 1!!!</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/app.js" charset="utf-8"></script>
-  </head>
-  <body>
-    <h1>PROJECT TIME!</h1>
+<head>
+  <meta charset="utf-8">
+  <title>PROJECT 1!!!</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="js/app.js" charset="utf-8"></script>
+</head>
+<body>
+  <header>
+    <button>New Game</button>
+    <!-- <input type="text" name="name" placeholder="NAME"> -->
+    <!-- <div class = "characters">Choose your character</div> -->
+  </header>
+  <main>
+    <!-- LEFT ELEMENTS -->
+    <div class="left">
+      <div class="display" id="timer">
+        <h1>Timer</h1>
+      </div>
+      <div class="display" id="health">
+        <ul>
+          <h1>Health</h1>
+          <li id="1">1</li>
+          <li id="2">2</li>
+          <li id="3">3</li>
+        </ul>
+      </div>
+      <div class="display" id="points">
+        <h1>Points<span class="points"></span></h1>
+      </div>
+    </div>
+
+    <!-- GAME ELEMENT -->
+    <div class="center">
+      <div class="game"></div>
+    </div>
+
+    <!-- RIGHT ELEMENTS -->
+
+    <div class="right">
+      <div class="display" id="scoring">
+        <ul>
+          <li id="1"></li>
+          <li id="2"></li>
+          <li id="3"></li>
+          <li id="4"></li>
+        </ul>
+      </div>
+
+        <div class="display" id="instructions">
+          <h2>Instructions blah blah blah</h2>
+        </div>
+
+      </div>
+
+    </main>
+    <footer>
+      <h2><div class="footer">Made with &hearts; by Plum @ General Assembly</div></h2>
+    </footer>
   </body>
-</html>
+  </html>

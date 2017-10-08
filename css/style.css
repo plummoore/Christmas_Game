@@ -1,3 +1,165 @@
-body {
-  background: blue;
-};
+/** {
+  box-sizing: border-box;
+}*/
+
+/*body {
+  background: green;
+}*/
+
+/*Top & Hidden elements*/
+header {
+  width: 1300px;
+  margin: 0 auto;
+  background: pink;
+  /*border: 3px solid black;*/
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  height: 60px;
+}
+
+button {
+  background: white;
+  width: 150px;
+  margin: 5px;
+  height: 50px;
+  float: right;
+  font-size: 18px;
+  border: 2px solid black;
+}
+
+/*General elements*/
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+main {
+  width: 1300px;
+  height: 650px;
+  /*background: gold;*/
+  margin: 0 auto;
+  border: 3px solid black;
+}
+
+/*Left elements*/
+.left{
+  /*background-color: red;*/
+  width: 294px;
+  height: 600px;
+  margin: 25px;
+  float: left;
+  position: relative;
+}
+
+#timer {
+  width:250px;
+  background: orange;
+  float: left;
+  text-align: center;
+  height: 150px;
+  margin: 25px;
+  font-size: 30px;
+}
+
+#health {
+  text-align: center;
+  background: orange;
+  height: 150px;
+  width: 250px;
+  margin: 25px;
+  float: left;
+}
+
+#health li {
+  border: solid black 1px;
+  text-align: center;
+  float: left;
+  height: 50px;
+  width: 50px;
+  margin: 30px 15px 10px 15px;
+}
+
+#points {
+  text-align: center;
+  background: orange;
+  margin: 25px;
+  width: 250px;
+  height: 150px;
+  float: left;
+}
+
+
+/*Center elements*/
+.center{
+  background-color: orange;
+  width: 600px;
+  height: 600px;
+  margin: 25px 0;
+  float: left;
+}
+
+.game {
+  width: 600px;
+  height: 600px;
+  background-color: white;
+  border: 2px solid black;
+}
+
+/*Right elements*/
+.right{
+  /*background-color: red;*/
+  width: 294px;
+  height: 600px;
+  margin: 25px;
+  float: left;
+}
+
+#scoring {
+  text-align: center;
+  background: orange;
+  margin: 25px;
+  width: 250px;
+  height: 250px;
+  float: left;
+}
+
+#scoring li {
+  text-align: center;
+  border: solid black 2px;
+  text-align: center;
+  float: left;
+  height: 80px;
+  width: 80px;
+  margin: 20px 20px;
+}
+
+#instructions {
+  text-align: center;
+  background: orange;
+  margin: 25px;
+  width: 250px;
+  height: 250px;
+  float: left;
+}
+
+
+/*Bottom elements*/
+
+footer {
+  width: 1300px;
+  margin: 0 auto;
+  background: pink;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  line-height: 50px;
+  height: 50px;
+  clear: both;
+}
+
+.footer {
+  float: right;
+}
