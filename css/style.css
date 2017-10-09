@@ -105,7 +105,31 @@ main {
   width: 600px;
   height: 600px;
   background-color: white;
-  border: 2px solid black;
+  /*border: 2px solid black;*/
+  position: absolute;
+}
+
+.sky {
+  width: 600px;
+  height: 450px;
+  background-color: gold;
+  position: relative;
+
+}
+
+.grass {
+  width: 600px;
+  height: 150px;
+  background-color: green;
+  position: absolute;
+}
+
+
+.dog {
+  height: 150px;
+  width: 100px;
+  background-color: blue;
+  position: absolute;
 }
 
 /*Right elements*/
