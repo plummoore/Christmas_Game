@@ -104,25 +104,31 @@ main {
 .game {
   width: 600px;
   height: 600px;
-  background-color: white;
+  background-color: gold;
   /*border: 2px solid black;*/
   position: absolute;
 }
 
-.sky {
+/*.sky {
   width: 600px;
-  height: 450px;
+  height: 600px;
   background-color: gold;
   position: relative;
+}*/
 
+.object {
+  height: 55px;
+  width: 55px;
+  background-color: purple;
+  position: absolute;
 }
 
-.grass {
+/*.grass {
   width: 600px;
   height: 150px;
   background-color: green;
   position: absolute;
-}
+}*/
 
 
 .dog {
@@ -130,6 +136,7 @@ main {
   width: 100px;
   background-color: blue;
   position: absolute;
+  margin: 450px 0 0 0;
 }
 
 /*Right elements*/
@@ -138,7 +145,7 @@ main {
   width: 294px;
   height: 600px;
   margin: 25px;
-  float: left;
+  float: right;
 }
 
 #scoring {
@@ -147,7 +154,7 @@ main {
   margin: 25px;
   width: 250px;
   height: 250px;
-  float: left;
+  float: right;
 }
 
 #scoring li {
@@ -166,7 +173,7 @@ main {
   margin: 25px;
   width: 250px;
   height: 250px;
-  float: left;
+  float: right;
 }
 
 

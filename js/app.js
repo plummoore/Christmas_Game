@@ -1,74 +1,46 @@
+
+
 $(() => {
 
   const $dog = $('.dog');
-  const $grass = $('.grass');
+  const $objects = $('.object');
+  const $game = $('.game');
 
-  // $(document).keyup(function (e) {
-  //   if (e.keyCode === 37) {
-  //     console.log('left');
-  //     $dog.animate({'left': '+=20'}, 'slow');
-  //   } else if (e.keyCode === 39) {
-  //     console.log('right');
-  //     $dog.animate({'right': '+=20'}, 'slow');
-  //   }
-  // });
 
-  setInterval(moveDog, 20);
-  var keys = {};
-
+  //functionality to use arrow keys
+  setInterval(moveDog, 1);
+  const keys = {};
   $(document).keydown(function(e) {
     keys[e.keyCode] = true;
+    console.log(keys);
   });
-
   $(document).keyup(function(e) {
     delete keys[e.keyCode];
   });
 
-  function moveDog() {
+  //***----FUNCTIONS----***
 
-    const maxLeft = $grass.width();
+  function moveDog() {
+    const maxLeft     = $game.width() - 100;
     const dogPosition = $dog.position().left;
 
     for (const direction in keys) {
-      if (!keys.hasOwnProperty(direction)) continue;
-
-      if (direction == 37) {
-        if (dogPosition > maxLeft) {
-          $dog.animate({left: '-=5'}, 0);
+      if (dogPosition > 0 && dogPosition < 500) {
+        if (direction == 37) {
+          $dog.animate({left: '-=1'}, 0);
+        } else if (direction == 39) {
+          $dog.animate({left: '+=1'}, 0);
         }
-      }else if (direction == 39) {
-        $dog.animate({left: '+=5'}, 0);
+      } else if (dogPosition === 500) {
+        $dog.animate({left: '-=1'}, 0);
+      } else {
+        $dog.animate({left: '+=1'}, 0);
       }
-
-
-      //
-      // if (dogPosition.left <= 500) {
-      //   console.log('Im still working');
-
-      // $dog.each( function(){
-      //   var dogPos = $(this).position();
-      //   $grass.each( function(){
-      //     var grassPos = $(this).position();
-      //     if( dogPos.left === grassPos.left){
-      //       console.log('hit');
-      //     }
-      //     console.log(dogPos);
-      //     console.log(grassPos);
-      //   });
-      // });
-
     }
   }
 
-});
+  console.log($objects);
+  $objects.animate({top: '+=5'}, 0);
 
-// $dog.each( function(){
-//   var dogOffset = $(this).offset();
-//   $grass.each( function(){
-//     var grassOffset = $(this).offset();
-//     if( dogOffset.left === grassOffset.left){
-//       console.log('hit');
-//       console.log(dogOffset);
-//     }
-//   });
-// });
+
+});
