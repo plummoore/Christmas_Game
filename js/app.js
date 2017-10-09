@@ -3,7 +3,7 @@
 $(() => {
 
   const $dog = $('.dog');
-  const $objects = $('.object');
+  const $object = $('.object');
   const $game = $('.game');
 
 
@@ -39,8 +39,36 @@ $(() => {
     }
   }
 
-  console.log($objects);
-  $objects.animate({top: '+=5'}, 0);
+  // function fallingObject(){
+  //   const randomStart = Math.floor(Math.random()*600);
+  //   $object.css({'margin-left': randomStart});
+
+  function fallAnimate(){
+    $object.animate({
+      top: '+=450'
+    }, {
+      duration: 5000,
+      complete: function() {
+        $( this ).after($object.remove());
+      }
+    });
+  }
+
+  //
+  // const width = $game.width();
+  // console.log(width);
+
+  function randomFalling(){
+    const randomWidth = Math.floor(Math.random()*600);
+    $object.css({'margin-left': randomWidth});
+    console.log(randomWidth);
+
+    fallAnimate();
+  }
+  console.log(randomFalling());
+
+
+  // }
 
 
 });
