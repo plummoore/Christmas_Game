@@ -11,7 +11,7 @@ $(() => {
 
   $(document).on('keydown', handleKeyCode);
 
-  animateFall();
+  setInterval(animateFall, 2000);
 
 
   //***----FUNCTIONS----***
@@ -30,6 +30,7 @@ $(() => {
   function randomWidth($box) {
     const randomWidth = Math.floor(Math.random()*500);
     $box.css({'margin-left': randomWidth});
+    $box.css({'margin-top': -50});
   }
 
 
@@ -49,7 +50,7 @@ $(() => {
   function animateObjects($box) {
     console.log($box);
     $box.animate({
-      top: '+=500'
+      'top': '550px'
     }, {
       duration: 5000,
       complete: function() {

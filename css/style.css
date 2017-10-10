@@ -199,36 +199,42 @@ footer {
 
 .box {
   border: 1px solid black;
+  top: -10px;
   position: relative;
 }
 
 .ball-blue {
   width: 55px;
   height: 55px;
+  top: -10px;
   background-image: url("../images/ball-blue.png");
 }
 
 .ball-green {
   width: 55px;
   height: 55px;
+  top: -10px;
   background-image: url("../images/ball-green.png");
 }
 
 .ball-orange {
   width: 55px;
   height: 55px;
+  top: -10px;
   background-image: url("../images/ball-orange.png");
 }
 
 .ball-pink {
   width: 55px;
   height: 55px;
+  top: -10px;
   background-image: url("../images/ball-pink.png");
 }
 
 .ball-purple {
   width: 55px;
   height: 55px;
+  top: -10px;
   background-image: url("../images/ball-purple.png");
 }
 
@@ -236,17 +242,20 @@ footer {
 .bone {
   width: 60px;
   height: 60px;
+  top: -10px;
   background-image: url("../images/bone.png");
 }
 
 .gnome {
   width: 56px;
   height: 90px;
+  top: -10px;
   background-image: url("../images/gnome.png");
 }
 
 .mushroom {
   width: 60px;
   height: 56px;
+  top: -10px;
   background-image: url("../images/mushroom.png");
 }
