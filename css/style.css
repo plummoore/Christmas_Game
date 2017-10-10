@@ -201,6 +201,7 @@ footer {
   border: 1px solid black;
   top: -10px;
   position: relative;
+  bottom: auto;
 }
 
 .ball-blue {

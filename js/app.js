@@ -40,35 +40,58 @@ $(() => {
     const $box = $('<div class="box"></div>');
     $box.addClass($randomItem);
     $game.append($box);
-    // getRandomObject($randomItem);
-    console.log($randomItem);
+
     randomWidth($box);
     animateObjects($box);
-
+    collision($dog, $box);
   }
 
   function animateObjects($box) {
-    console.log($box);
-    $box.animate({
-      'top': '550px'
-    }, {
-      duration: 5000,
-      complete: function() {
-        $( this ).after($box.remove());
-      }
-    });
-    console.log('working');
+    $box.animate({'top': '550px'},
+      {
+        easing: 'linear',
+        duration: 5000,
+        complete: function() {
+          $( this ).after($box.remove());
+        },
+        step: function() {
+          if (collision($dog, $box)) {
+            $box.remove();
+
+
+            // if box should be collected
+
+            // else
+              // lose life
+          }
+
+        }
+      });
   }
 
 
 
-  // function getRandomObject(){
-  //   const items = ['ball-blue', 'ball-green', 'ball-orange', 'ball-pink', 'ball-purple', 'bone', 'gnome', 'mushroom'];
-  //   const $randomItem = items[Math.floor(Math.random() * items.length)];
-  //
-  //
-  // }
+  function collision ($dog, $box) {
+    var x1 = $dog.offset().left;
+    var y1 = $dog.offset().top -35;
+    var h1 = $dog.outerHeight(true);
+    var w1 = $dog.outerWidth(true);
+    var b1 = y1 + h1;
+    var r1 = x1 + w1;
+    var x2 = $box.offset().left;
+    var y2 = $box.offset().top;
+    var h2 = $box.outerHeight(true);
+    var w2 = $box.outerWidth(true);
+    var b2 = y2 + h2;
+    var r2 = x2 + w2;
 
+    if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) {
+      return false;
+    }
+    return true;
+  }
+
+  // setInterval(collision, 200);
 
 
 });
