@@ -11,8 +11,16 @@ $(() => {
 
   $(document).on('keydown', handleKeyCode);
 
-  setInterval(animateFall, 2000);
 
+
+  $('#new').click(function() {
+    $('.characters').css({'display': 'block'});
+  });
+
+  $('#play').click(function() {
+    $('.characters').css({'display': 'none'});
+    setInterval(animateFall, 2000);
+  });
 
   //***----FUNCTIONS----***
 
