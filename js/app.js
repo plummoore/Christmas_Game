@@ -47,7 +47,7 @@ $(() => {
   }
 
   function animateObjects($box) {
-
+    console.log($box);
     $box.animate({
       top: '+=500'
     }, {
@@ -56,6 +56,7 @@ $(() => {
         $( this ).after($box.remove());
       }
     });
+    console.log('working');
   }
 
 
