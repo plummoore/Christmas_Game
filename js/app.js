@@ -16,14 +16,10 @@ $(() => {
   const $bone = $('.bone');
   const $gnome = $('.gnome');
   const $mushroom = $('.mushroom');
-  // const $randomObject = [];
 
-  console.log(typeof $ballBlue);
-  console.log($ballBlue);
 
   $(document).on('keydown', handleKeyCode);
   animateFall();
-
 
 
   //***----FUNCTIONS----***
@@ -46,10 +42,13 @@ $(() => {
 
 
   function animateFall(){
-    // var refreshId = setInterval(animateFall, 2000);
-    fallingTimer();
     randomWidth();
-    // getRandomObject();
+    animateObjects();
+    getRandomObject();
+  }
+
+  function animateObjects() {
+
 
     $object.animate({
       top: '+=500'
@@ -62,33 +61,20 @@ $(() => {
   }
 
 
-  function fallingTimer() {
-    setInterval(animateFall, 3000);
-  }
-
-
 
   function getRandomObject(){
     const items = ['ball-blue', 'ball-green', 'ball-orange', 'ball-pink', 'ball-purple', 'bone', 'gnome', 'mushroom'];
     // const items = [$ballBlue, $ballGreen, $ballOrange, $ballPink, $ballPurple, $bone, $gnome, $mushroom];
     const $randomItem = items[Math.floor(Math.random() * items.length)];
     console.log($randomItem);
-    // $randomObject.push(randomItem);
-    // console.log($randomObject);
-    // $object.css({'width', 'height', 'background-image' : randomItem});
-    // $object.css = (['width', 'height', 'background-image' : $randomItem]);
-
-    $object.css({'class': $randomItem});
-    console.log($object);
 
   }
+
+
 
 });
 
 
-// function chooseBall() {
-//   const $ball = ['images/ball-blue.png', 'images/ball-green.png', 'images/ball-orange.png', 'images/ball-pink.png', 'images/ball-purple.png'];
-// }
 
 //set interval 2secs
 //append a new div to the parent (game div)
