@@ -116,12 +116,13 @@ $(() => {
       });
   }
 
-  function score(){
+  function score($box){
     $scoreBoard.html($score);
     if ($score <=0) {
       console.log('GAME OVER');
       $('.over').css({'display': 'block'});
-      clearTimeout(interval);
+      // clearTimeout(interval);
+      $game.remove($box);
     }
   }
 

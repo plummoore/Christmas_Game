@@ -49,18 +49,6 @@ header {
   text-align: center;
 }
 
-.over {
-  width: 1300px;
-  height: 300px;
-  margin: 50%;
-  margin: 0 auto;
-  background: blue;
-  display: none;
-  float: left;
-  text-align: center;
-  font-size: 60px;
-}
-
 #play {
   background: white;
   width: 150px;
@@ -174,6 +162,16 @@ main {
   background-color: gold;
   /*border: 2px solid black;*/
   position: absolute;
+}
+
+.over {
+  width: 500px;
+  height: 500px;
+  background: pink;
+  display: none;
+  text-align: center;
+  font-size: 60px;
+  margin:50px;
 }
 
 /*.sky {
