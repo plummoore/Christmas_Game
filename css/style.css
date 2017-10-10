@@ -197,51 +197,55 @@ footer {
 
 /*OBJECTS FOR GAME*/
 
+.box {
+  border: 1px solid black;
+}
+
 .ball-blue {
   width: 55px;
   height: 55px;
-  background-image: url("images/ball-blue.png");
+  background-image: url("../images/ball-blue.png");
 }
 
 .ball-green {
   width: 55px;
   height: 55px;
-  background-image: url("images/ball-green.png");
+  background-image: url("../images/ball-green.png");
 }
 
 .ball-orange {
   width: 55px;
   height: 55px;
-  background-image: url("images/ball-orange.png");
+  background-image: url("../images/ball-orange.png");
 }
 
 .ball-pink {
   width: 55px;
   height: 55px;
-  background-image: url("images/ball-pink.png");
+  background-image: url("../images/ball-pink.png");
 }
 
 .ball-purple {
   width: 55px;
   height: 55px;
-  background-image: url("images/ball-purple.png");
+  background-image: url("../images/ball-purple.png");
 }
 
 
 .bone {
   width: 60px;
   height: 60px;
-  background-image: url("images/bone.png");
+  background-image: url("../images/bone.png");
 }
 
 .gnome {
   width: 56px;
   height: 90px;
-  background-image: url("images/gnome.png");
+  background-image: url("../images/gnome.png");
 }
 
 .mushroom {
   width: 60px;
   height: 56px;
-  background-image: url("images/mushroom.png");
+  background-image: url("../images/mushroom.png");
 }

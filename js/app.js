@@ -1,24 +1,16 @@
 let $dog;
-let $ball;
-let $randomObject = [];
+let $randomItem;
+let $object;
 
 $(() => {
 
   const $dog = $('.dog');
-  const $object = $('.object');
+  // const $object = $('.object');
   const $game = $('.game');
-  //Objects in game
-  const $ballBlue = $('.ball-blue');
-  const $ballGreen = $('.ball-green');
-  const $ballOrange = $('.ball-orange');
-  const $ballPink = $('.ball-pink');
-  const $ballPurple = $('.ball-purple');
-  const $bone = $('.bone');
-  const $gnome = $('.gnome');
-  const $mushroom = $('.mushroom');
 
 
   $(document).on('keydown', handleKeyCode);
+
   animateFall();
 
 
@@ -35,40 +27,45 @@ $(() => {
     $dog.animate({ 'left': `${operation}=20` }, 0);
   }
 
-  function randomWidth() {
+  function randomWidth($box) {
     const randomWidth = Math.floor(Math.random()*500);
-    $object.css({'margin-left': randomWidth});
+    $box.css({'margin-left': randomWidth});
   }
 
 
   function animateFall(){
-    randomWidth();
-    animateObjects();
-    getRandomObject();
+    const items = ['ball-blue', 'ball-green', 'ball-orange', 'ball-pink', 'ball-purple', 'bone', 'gnome', 'mushroom'];
+    const $randomItem = items[Math.floor(Math.random() * items.length)];
+    const $box = $('<div class="box"></div>');
+    $box.addClass($randomItem);
+    $game.append($box);
+    // getRandomObject($randomItem);
+    console.log($randomItem);
+    randomWidth($box);
+    animateObjects($box);
+
   }
 
-  function animateObjects() {
+  function animateObjects($box) {
 
-
-    $object.animate({
+    $box.animate({
       top: '+=500'
     }, {
       duration: 5000,
       complete: function() {
-        $( this ).after($object.remove());
+        $( this ).after($box.remove());
       }
     });
   }
 
 
 
-  function getRandomObject(){
-    const items = ['ball-blue', 'ball-green', 'ball-orange', 'ball-pink', 'ball-purple', 'bone', 'gnome', 'mushroom'];
-    // const items = [$ballBlue, $ballGreen, $ballOrange, $ballPink, $ballPurple, $bone, $gnome, $mushroom];
-    const $randomItem = items[Math.floor(Math.random() * items.length)];
-    console.log($randomItem);
-
-  }
+  // function getRandomObject(){
+  //   const items = ['ball-blue', 'ball-green', 'ball-orange', 'ball-pink', 'ball-purple', 'bone', 'gnome', 'mushroom'];
+  //   const $randomItem = items[Math.floor(Math.random() * items.length)];
+  //
+  //
+  // }
 
 
 
