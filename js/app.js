@@ -1,84 +1,30 @@
-
+let $dog;
 
 $(() => {
 
   const $dog = $('.dog');
   const $object = $('.object');
   const $game = $('.game');
-  const $document = $(document);
 
 
-  $document.keydown(function(e){
-    // const dogPosition = $dog.position().left;
-    // console.log(dogPosition);
-    // if (dogPosition > 0 && dogPosition < 500) {
-    switch (e.which){
-      case 37:    //left arrow key
-        $dog.animate({ left: '-=50'});
-        break;
-      case 39:    //right arrow key
-        $dog.finish().animate({left: '+=50'});
-        break;
-    }
-  });
+  $(document).on('keydown', handleKeyCode);
+  fallAnimate();
 
 
-
-
-
-
-  // setInterval(moveDog, 1);
-  // const keys = {};
-  // $(document).keydown(function(e) {
-  //   keys[e.keyCode] = true;
-  //   console.log(keys);
-  // });
-  // $(document).keyup(function(e) {
-  //   delete keys[e.keyCode];
-  // });
 
   //***----FUNCTIONS----***
 
-  // function moveDog() {
-  //   const maxLeft     = $game.width() - 100;
-  //   const dogPosition = $dog.position().left;
-  //
-  //   if (dogPosition > 0 && dogPosition < 500) {
-  //     if (keydown == 37) {
-  //       $dog.animate({left: '-=1'}, 0);
-  //     } else if (keydown == 39) {
-  //       $dog.animate({left: '+=1'}, 0);
-  //     }
-  //   } else if (dogPosition === 500) {
-  //     $dog.animate({left: '-=1'}, 0);
-  //   } else {
-  //     $dog.animate({left: '+=1'}, 0);
-  //   }
-  // };
+  function handleKeyCode(e) {
+    const dogLeftValue = parseInt($dog.css('left'));
+
+    if (e.keyCode === 37 && dogLeftValue !== 0)   handlePlayerMovement('-');
+    if (e.keyCode === 39 && dogLeftValue !== 500) handlePlayerMovement('+');
+  }
 
 
-
-  // function moveDog() {
-  // const maxLeft     = $game.width() - 100;
-  // const dogPosition = $dog.position().left;
-
-  // if (dogPosition > 0 && dogPosition < 500) {
-  //   if (e.which == 37) {
-  //   $dog.animate({left: '-=1'}, 0);
-  // } else if (e.which == 39) {
-  //   $dog.animate({left: '+=1'}, 0);
-  // }
-  // } else if (dogPosition === 500) {
-  //   $dog.animate({left: '-=1'}, 0);
-  // } else {
-  //   $dog.animate({left: '+=1'}, 0);
-  // }
-
-
-
-  // function fallingObject(){
-  //   const randomStart = Math.floor(Math.random()*600);
-  //   $object.css({'margin-left': randomStart});
+  function handlePlayerMovement(operation) {
+    $dog.animate({ 'left': `${operation}=20` }, 0);
+  }
 
   function fallAnimate(){
     const randomWidth = Math.floor(Math.random()*545);
@@ -94,7 +40,7 @@ $(() => {
     });
   }
 
-  fallAnimate();
+
 
 
 });
