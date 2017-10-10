@@ -49,6 +49,18 @@ header {
   text-align: center;
 }
 
+.over {
+  width: 1300px;
+  height: 300px;
+  margin: 50%;
+  margin: 0 auto;
+  background: blue;
+  display: none;
+  float: left;
+  text-align: center;
+  font-size: 60px;
+}
+
 #play {
   background: white;
   width: 150px;
@@ -137,6 +149,13 @@ main {
   width: 250px;
   height: 150px;
   float: left;
+}
+
+#points li {
+  text-align: center;
+  font-weight: 800;
+  line-height: 100px;
+  font-size: 50px;
 }
 
 

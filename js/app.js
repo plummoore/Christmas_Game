@@ -7,19 +7,28 @@ $(() => {
   const $dog = $('.dog');
   const $timeContainer = $('.countdown');
   const $game = $('.game');
+  const $characters = $('.characters');
+  const $scoreBoard = $('.points');
+
   let timer = 10;
   let interval = null;
-
+  let $score = 0;
+  let $health = 3;
 
   $(document).on('keydown', handleKeyCode);
-
-
-
-  $('#new').click(function() {
-    $('.characters').css({'display': 'block'});
-  });
-
   $('#play').click(play);
+  $('#new').click(chooseCharacter);
+
+
+  // $('#new').click(chooseCharacter);
+
+  function chooseCharacter(){
+    $('.characters').css({'display': 'block'});
+    $characters.click(function() {
+      console.log(this.id);
+    });
+
+  }
 
 
   function play(){
@@ -27,6 +36,8 @@ $(() => {
     setInterval(animateFall, 2000);
     countdown();
     interval = setInterval(countdown, 1000);
+    $score = 10;
+
   }
 
   //***----FUNCTIONS----***
@@ -40,6 +51,7 @@ $(() => {
 
   function handlePlayerMovement(operation) {
     $dog.animate({ 'left': `${operation}=20` }, 0);
+
   }
 
   function randomWidth($box) {
@@ -74,17 +86,44 @@ $(() => {
             $box.remove();
 
 
-            // if box should be collected
+            if ($box.hasClass('ball-blue') || $box.hasClass('ball-pink') || $box.hasClass('ball-green') || $box.hasClass('ball-orange')|| $box.hasClass('ball-purple')) {
+              console.log('yey ball!');
+              $score +=0;
+              console.log($score);
 
-            // else
-            // lose life
+            } else if ($box.hasClass('gnome')) {
+              console.log('yey gnome!');
+              $score -=10;
+              console.log($score);
+
+            } else if ($box.hasClass('mushroom')) {
+              console.log('yey mushroom!');
+              if ($health >=3) {
+                $health -=1;
+                console.log($health);
+              }
+
+            } else if ($box.hasClass('bone')) {
+              console.log('yey bone!');
+              if ($health <=3) {
+                $health +=1;
+                console.log($health);
+              }
+            }
+            score();
           }
-
         }
       });
   }
 
-
+  function score(){
+    $scoreBoard.html($score);
+    if ($score <=0) {
+      console.log('GAME OVER');
+      $('.over').css({'display': 'block'});
+      clearTimeout(interval);
+    }
+  }
 
   function collision ($dog, $box) {
     var x1 = $dog.offset().left;
@@ -112,7 +151,7 @@ $(() => {
 
     if (timer <= 0) {
       clearInterval(interval);
-    // gameOver();
+      // gameOver();
     }
   }
 
