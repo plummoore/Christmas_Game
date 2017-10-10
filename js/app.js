@@ -5,8 +5,10 @@ let $object;
 $(() => {
 
   const $dog = $('.dog');
-  // const $object = $('.object');
+  const $timeContainer = $('.countdown');
   const $game = $('.game');
+  let timer = 10;
+  let interval = null;
 
 
   $(document).on('keydown', handleKeyCode);
@@ -17,10 +19,15 @@ $(() => {
     $('.characters').css({'display': 'block'});
   });
 
-  $('#play').click(function() {
+  $('#play').click(play);
+
+
+  function play(){
     $('.characters').css({'display': 'none'});
     setInterval(animateFall, 2000);
-  });
+    countdown();
+    interval = setInterval(countdown, 1000);
+  }
 
   //***----FUNCTIONS----***
 
@@ -70,7 +77,7 @@ $(() => {
             // if box should be collected
 
             // else
-              // lose life
+            // lose life
           }
 
         }
@@ -99,8 +106,15 @@ $(() => {
     return true;
   }
 
-  // setInterval(collision, 200);
+  function countdown() {
+    timer--;
+    $timeContainer.html(timer);
 
+    if (timer <= 0) {
+      clearInterval(interval);
+    // gameOver();
+    }
+  }
 
 });
 

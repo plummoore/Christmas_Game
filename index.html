@@ -32,15 +32,20 @@
   <main>
     <!-- LEFT ELEMENTS -->
     <div class="left">
+
       <div class="display" id="timer">
         <h1>Timer</h1>
+        <ul>
+        <li><div class="countdown">10</div></li>
+      </ul>
       </div>
+
       <div class="display" id="health">
         <ul>
           <h1>Health</h1>
-          <li id="1">1</li>
-          <li id="2">2</li>
-          <li id="3">3</li>
+          <li id="bone1"><img src="images/bone.png"></li>
+          <li id="bone2"><img src="images/bone.png"></li>
+          <li id="bone3"><img src="images/bone.png"></li>
         </ul>
       </div>
       <div class="display" id="points">
@@ -51,8 +56,8 @@
     <!-- GAME ELEMENT -->
     <div class="center">
       <div class="game">
-          <!-- <div class="object"></div> -->
-          <div class ="dog"><img src="images/dog1.png"></div>
+        <!-- <div class="object"></div> -->
+        <div class ="dog"><img src="images/dog1.png"></div>
       </div>
     </div>
 
@@ -61,15 +66,25 @@
     <div class="right">
       <div class="display" id="scoring">
         <ul>
-          <li id="1"></li>
-          <li id="2"></li>
-          <li id="3"></li>
-          <li id="4"></li>
+          <li id="1"><img src="images/ball-purple.png"></li>
+          <li id="2"><img src="images/bone.png"></li>
+          <li id="3"><img src="images/gnome.png"></li>
+          <li id="4"><img src="images/mushroom.png"></li>
         </ul>
       </div>
 
       <div class="display" id="instructions">
-        <h2>Instructions blah blah blah</h2>
+        <h2>Instructions</h2>
+        <article>
+          <p>The gnomes have been stealing your bones. Try to beat them to win your garden back and reclaim all your bones.Collect as many balls as you can to win points but be careful to avoid those dastardly gnomes and their posinous mushrooms</p>
+        </article>
+
+        <ul>
+          <li><h3>Level One - collect 200 points</h3></li>
+          <li><h3>Level Two - collect 350 points</h3></li>
+          <li><h3>Level One - collect 500 points</h3></li>
+        </ul>
+        </ul>
       </div>
 
     </div>
