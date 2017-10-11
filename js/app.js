@@ -10,11 +10,9 @@ $(() => {
   $dogImg = $('.dog img');
   const $timeContainer = $('.countdown');
   const $game = $('.game');
-  const $characters = $('.characters');
   const $scoreBoard = $('.points');
   const $currentLevel = $('.currentlevel');
 
-  console.log($dogImg);
 
 
   let $timer = 30;
@@ -34,22 +32,11 @@ $(() => {
 
   function chooseCharacter(){
     $('.characters').css({'display': 'block'});
-    // $characters.click(function() {
-    //   console.log(this.id);
     $('.characters').on('click',function (e) {
       const selectedDog = $(e.target).attr('src');
       $($dogImg).attr('src', selectedDog);
 
-
-
-
-      // $(this).addClass($dog);
-      // console.log($dog);
-
-      // $dog = (`../images/${e.target.id}.png`);
-      // console.log($dog);
     });
-    // });
 
   }
 
@@ -234,7 +221,6 @@ $(() => {
 
 
   }
-
 
 
 });
