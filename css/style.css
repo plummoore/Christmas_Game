@@ -36,6 +36,8 @@ header {
   background: gold;
   display: none;
   float: left;
+  position: fixed;
+  z-index: 1;
 }
 .characters ul {
   height: 200px;
@@ -49,7 +51,18 @@ header {
   text-align: center;
 }
 
-#play {
+.play {
+  background: white;
+  width: 150px;
+  margin: 5px;
+  height: 50px;
+  float: right;
+  line-height: 50px;
+  text-align: center;
+  font-size: 24px;
+  border: 2px solid black;
+}
+.continue {
   background: white;
   width: 150px;
   margin: 5px;
@@ -90,11 +103,22 @@ main {
 .left{
   /*background-color: red;*/
   width: 294px;
-  height: 600px;
+  height: 620px;
   margin: 25px;
   float: left;
   position: relative;
 }
+
+.level {
+  width:250px;
+  background: orange;
+  float: left;
+  text-align: center;
+  height: 100px;
+  margin: 10px 25px;
+  font-size: 30px;
+}
+
 
 #timer {
   width:250px;
@@ -102,7 +126,7 @@ main {
   float: left;
   text-align: center;
   height: 150px;
-  margin: 25px;
+  margin: 10px 25px;
   font-size: 30px;
 }
 
@@ -118,7 +142,7 @@ main {
   background: orange;
   height: 150px;
   width: 250px;
-  margin: 25px;
+  margin: 10px 25px;
   float: left;
 }
 
@@ -133,7 +157,7 @@ main {
 #points {
   text-align: center;
   background: orange;
-  margin: 25px;
+  margin: 10px 25px;
   width: 250px;
   height: 150px;
   float: left;
@@ -172,12 +196,24 @@ main {
   text-align: center;
   font-size: 60px;
   margin:50px;
+  z-index: 1;
+  position: absolute;
 }
 
-.level1 .level2 .level3 {
+.complete {
   width: 500px;
   height: 500px;
-  background: pink;
+  background: green;
+  display: none;
+  text-align: center;
+  font-size: 60px;
+  margin:50px;
+}
+
+.winner {
+  width: 500px;
+  height: 500px;
+  background: blue;
   display: none;
   text-align: center;
   font-size: 60px;
@@ -206,7 +242,7 @@ main {
 .right{
   /*background-color: red;*/
   width: 294px;
-  height: 600px;
+  height: 620px;
   margin: 25px;
   float: right;
 }

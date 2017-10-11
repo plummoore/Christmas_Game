@@ -1,46 +1,97 @@
-let $dog;
-let $randomItem;
-let $object;
 let $box;
+let counter;
+let falling;
+let $dogImg;
+let $allBoxes;
 
 $(() => {
 
-  const $dog = $('.dog');
+  let $dog = $('.dog');
+  $dogImg = $('.dog img');
   const $timeContainer = $('.countdown');
   const $game = $('.game');
   const $characters = $('.characters');
   const $scoreBoard = $('.points');
-  // const $healthBoard = $('#health');
+  const $currentLevel = $('.currentlevel');
 
-  let $timer = 10;
-  let interval = null;
+  console.log($dogImg);
+
+
+  let $timer = 30;
   let $score = 10;
   let $health = 3;
-  let $level = 1;
-  let speed = 2000;
+  let level = 0;
+  let speed = 1000;
+
 
 
   $(document).on('keydown', handleKeyCode);
-  $('#play').click(play);
+  $('.play').click(play);
   $('#new').click(chooseCharacter);
-
+  $('.continue').click(playOn);
 
   //***----FUNCTIONS----***
 
   function chooseCharacter(){
     $('.characters').css({'display': 'block'});
-    $characters.click(function() {
-      console.log(this.id);
+    // $characters.click(function() {
+    //   console.log(this.id);
+    $('.characters').on('click',function (e) {
+      const selectedDog = $(e.target).attr('src');
+      $($dogImg).attr('src', selectedDog);
+
+
+
+
+      // $(this).addClass($dog);
+      // console.log($dog);
+
+      // $dog = (`../images/${e.target.id}.png`);
+      // console.log($dog);
     });
+    // });
 
   }
 
   function play(){
     $('.characters').css({'display': 'none'});
-    setInterval(countdown, 1000);
-    setInterval(animateFall, speed);
+    level ++;
+    $currentLevel.html(level);
+    falling = setInterval(animateFall, speed);
     $scoreBoard.html($score);
+    counter = setInterval(timer, 1000);
+    function timer() {
+      $timer--;
+      if ($timer === 0){
+        clearInterval(counter);
+        clearInterval(falling);
+        $timeContainer.html('');
+        endOfGame();
+      }
+      $timeContainer.html($timer);
+    }
+  }
 
+  function playOn(){
+    level ++;
+    $score =10;
+    $health =3;
+    $game.show($box);
+    $('.complete').css({'display': 'none'});
+    falling = setInterval(animateFall, speed);
+    $scoreBoard.html($score);
+    $timer =30;
+    const counter=setInterval(timer, 1000);
+    function timer() {
+      $timer--;
+      if ($timer === 0){
+        clearInterval(counter);
+        clearInterval(falling);
+        $timeContainer.html('');
+        endOfGame();
+      }
+      $timeContainer.html($timer);
+    }
   }
 
   function handleKeyCode(e) {
@@ -63,6 +114,7 @@ $(() => {
 
   function animateFall(){
     const items = ['ball-blue', 'ball-green', 'ball-orange', 'ball-pink', 'ball-purple', 'bone', 'gnome', 'mushroom'];
+    // const items = ['gnome', 'mushroom'];
     const $randomItem = items[Math.floor(Math.random() * items.length)];
     const $box = $('<div class="box"></div>');
     $box.addClass($randomItem);
@@ -71,6 +123,7 @@ $(() => {
     randomWidth($box);
     animateObjects($box);
     collision($dog, $box);
+    $allBoxes = $('.box');
   }
 
   function animateObjects($box) {
@@ -85,14 +138,17 @@ $(() => {
           if (collision($dog, $box)) {
             $box.remove();
 
+            $scoreBoard.html($score);
 
             if ($box.hasClass('ball-blue') || $box.hasClass('ball-pink') || $box.hasClass('ball-green') || $box.hasClass('ball-orange')|| $box.hasClass('ball-purple')) {
 
               console.log('ball ' + $score);
               $score +=10;
+              $scoreBoard.html($score);
             } if ($box.hasClass('gnome')) {
               console.log('gnome ' + $score);
               $score -=10;
+              $scoreBoard.html($score);
               if ($score <=0){
                 gameOver();
               }
@@ -101,10 +157,12 @@ $(() => {
             } else if ($box.hasClass('mushroom')) {
               console.log('mushroom');
               $health--;
+              console.log($health);
               $($('.bone')[$health]).hide();
               if ($health === 0) {
                 console.log('game over');
                 gameOver();
+                $box.stop();
               }
             } else if ($box.hasClass('bone')) {
               console.log('bone');
@@ -113,25 +171,38 @@ $(() => {
                 $health++;
               }
             }
-            $scoreBoard.html($score);
-            endOfGame($box);
+            // $scoreBoard.html($score);
           }
         }
       });
   }
 
-  function endOfGame($box){
-    // $scoreBoard.html($score);
-    if ($timer === 0 && $level === 1 && $score >=50){
-      level1Win($box);
-    } if ($timer === 0 && $level === 2 && $score >=350){
-      level2Win($box);
-    } if ($timer === 0 && $level === 3 && $score >=500){
-      level3Win($box);
-    }
+  function endOfGame(){
+    clearInterval(counter);
+    clearInterval(falling);
+
+    $game.hide($box);
+    $('.over').css({'display': 'none'});
+
+    console.log('end of game logic triggered');
+
+    if (level === 1 && $score >=100) {
+      $('.complete').css({'display': 'block'});
+      $currentLevel.html(level);
+      speed = 600;
+
+
+    } else if (level === 2 && $score >=150) {
+      $('.complete').css({'display': 'block'});
+      $currentLevel.html(level);
+      speed = 400;
+
+    } else if (level === 3 && $score >=300) {
+      $('.winner').css({'display': 'block'});
+      $currentLevel.html(level);
+
+    } else gameOver();
   }
-
-
 
   function collision ($dog, $box) {
     var x1 = $dog.offset().left;
@@ -153,45 +224,17 @@ $(() => {
     return true;
   }
 
-  function countdown() {
-    $timer--;
-    $timeContainer.html($timer);
-  }
-
-  function levelLogic(){
-    if ($level === 1)
-      speed = 2000;
-    if ($level === 2)
-      speed = 1500;
-    if ($level === 1)
-      speed = 1000;
-  }
-
-  function gameOver($box){
+  function gameOver(){
+    console.log('Im triggered');
+    $($allBoxes).stop();
+    clearInterval(counter);
+    clearInterval(falling);
     $('.over').css({'display': 'block'});
-    $game.remove($box);
-    // $timer = 0;
+    $('.complete').css({'display': 'none'});
+
 
   }
 
-  function level1Win($box){
-    $('.level1').css({'display': 'block'});
-    $game.remove($box);
-    $level ++;
-    levelLogic();
-  }
 
-  function level2Win($box){
-    $('.level2').css({'display': 'block'});
-    $game.remove($box);
-    $level ++;
-    levelLogic();
-  }
-
-  function level3Win($box){
-    $('.level3').css({'display': 'block'});
-    $game.remove($box);
-    levelLogic();
-  }
 
 });

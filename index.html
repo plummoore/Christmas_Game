@@ -16,15 +16,15 @@
   <header>
     <button id="new">New Game</button></div>
     <div class ="characters">
+      <h1>Choose your character</h1>
       <ul>
-        <h1>Choose your character</h1>
-        <li id="Dog1"><img src="images/dog1.png"></li>
-        <li id="Dog2"><img src="images/dog2.png"></li>
-        <li id="Dog3"><img src="images/dog3.png"></li>
-        <li id="Dog4"><img src="images/dog4.png"></li>
-        <li id="Dog5"><img src="images/dog5.png"></li>
+        <li class= "Dog1" id="Dog1"><img src="images/dog1.png"></li>
+        <li class= "Dog2" id="Dog2"><img src="images/dog2.png"></li>
+        <li class= "Dog3" id="Dog3"><img src="images/dog3.png"></li>
+        <li class= "Dog4" id="Dog4"><img src="images/dog4.png"></li>
+        <li class= "Dog5" id="Dog5"><img src="images/dog5.png"></li>
       </ul>
-      <button id="play">Play</button></div>
+      <button class="play">Play</button></div>
     </div>
     <!-- <input type="text" name="name" placeholder="NAME"> -->
     <!-- <div class = "characters">Choose your character</div> -->
@@ -32,18 +32,19 @@
   <main>
     <!-- LEFT ELEMENTS -->
     <div class="left">
+      <div class="level">Level<div class="currentlevel"></div></div>
 
       <div class="display" id="timer">
         <h1>Timer</h1>
         <ul>
-        <li><div class="countdown"></div></li>
-      </ul>
+          <li><div class="countdown"></div></li>
+        </ul>
       </div>
 
       <div class="display" id="health">
 
-          <h1>Health</h1>
-          <ul>
+        <h1>Health</h1>
+        <ul>
           <li class="bone"><img src="images/bone.png"></li>
           <li class="bone"><img src="images/bone.png"></li>
           <li class="bone"><img src="images/bone.png"></li>
@@ -60,14 +61,22 @@
     <!-- GAME ELEMENT -->
 
     <div class="center">
+
       <div class="game">
-        <!-- <div class="object"></div> -->
         <div class ="dog"><img src="images/dog1.png"></div>
       </div>
 
-      <div class="over">GAME OVER</div>
-
-      <div class="level1">level 1 win!</div>
+      <div>
+        <div class="over">GAME OVER</div>
+      </div>
+      <div class="complete">
+        <div class="level">End of Level <span class="currentlevel"></span></div>
+        <div class="message"></div>
+        <div><button class="continue">Bring on the gnomes!</button></div>
+      </div>
+      <div class="winner"><span class="currentlevel"></span>
+        <div class="level">You win! You beat the gnomes and the bones are all yours!</div>
+      </div>
 
     </div>
 
@@ -95,15 +104,15 @@
           <li><h3>Level Two - collect 350 points</h3></li>
           <li><h3>Level One - collect 500 points</h3></li>
         </ul>
-        </ul>
-      </div>
-
+      </ul>
     </div>
-  </main>
 
-  <footer>
-    <h2><div class="footer">Made with &hearts; by Plum @ General Assembly</div></h2>
-  </footer>
+  </div>
+</main>
+
+<footer>
+  <h2><div class="footer">Made with &hearts; by Plum @ General Assembly</div></h2>
+</footer>
 
 
 
