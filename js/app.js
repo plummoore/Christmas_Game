@@ -10,7 +10,7 @@ $(() => {
   $dogImg = $('.dog img');
   const $timeContainer = $('.countdown');
   const $game = $('.game');
-  const $scoreBoard = $('.points');
+  const $scoreBoard = $('.currentpoints');
   const $currentLevel = $('.currentlevel');
 
 
@@ -184,7 +184,7 @@ $(() => {
       $currentLevel.html(level);
       speed = 400;
 
-    } else if (level === 3 && $score >=300) {
+    } else if (level === 3 && $score >=250) {
       $('.winner').css({'display': 'block'});
       $currentLevel.html(level);
 

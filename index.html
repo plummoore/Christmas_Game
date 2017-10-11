@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>PROJECT 1!!!</title>
+  <link rel="stylesheet" href="css/debug.css">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/animate.css">
+   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/style.css">
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -32,30 +33,17 @@
   <main>
     <!-- LEFT ELEMENTS -->
     <div class="left">
-      <div class="level">Level<div class="currentlevel"></div></div>
 
-      <div class="display" id="timer">
-        <h1>Timer</h1>
-        <ul>
-          <li><div class="countdown"></div></li>
-        </ul>
-      </div>
-
-      <div class="display" id="health">
-
-        <h1>Health</h1>
+      <div class="level"><h1>Level</h1><div class="currentlevel"></div></div>
+      <div class="timer"><h1>Timer</h1><div class="countdown"></div></div>
+      <div  class="health"><h1>Health</h1>
         <ul>
           <li class="bone"><img src="images/bone.png"></li>
           <li class="bone"><img src="images/bone.png"></li>
           <li class="bone"><img src="images/bone.png"></li>
         </ul>
       </div>
-      <div class="display" id="points">
-        <h1>Points</h1>
-        <ul>
-          <li><div class="points"></div></li>
-        </ul>
-      </div>
+      <div class="points"><h1>Points</h1><div class="currentpoints"></div></div>
     </div>
 
     <!-- GAME ELEMENT -->
@@ -84,7 +72,7 @@
     <!-- RIGHT ELEMENTS -->
 
     <div class="right">
-      <div class="display" id="scoring">
+      <div class="scoring">
         <ul>
           <li id="1"><img src="images/ball-purple.png"></li>
           <li id="2"><img src="images/bone.png"></li>
@@ -93,7 +81,7 @@
         </ul>
       </div>
 
-      <div class="display" id="instructions">
+      <div class="instructions">
         <h2>Instructions</h2>
         <article>
           <p>The gnomes have been stealing your bones. Try to beat them to win your garden back and reclaim all your bones.Collect as many balls as you can to win points but be careful to avoid those dastardly gnomes and their posinous mushrooms</p>
