@@ -37,11 +37,9 @@ $(() => {
 
   function play(){
     $('.characters').css({'display': 'none'});
-    countdown();
-    interval = setInterval(countdown, 1000);
+    setInterval(countdown, 1000);
     setInterval(animateFall, speed);
     $scoreBoard.html($score);
-    // $score = 10;
 
   }
 
@@ -77,56 +75,54 @@ $(() => {
 
   function animateObjects($box) {
     $box.animate({'top': '550px'},
-    {
-      easing: 'linear',
-      duration: 5000,
-      complete: function() {
-        $( this ).after($box.remove());
-      },
-      step: function() {
-        if (collision($dog, $box)) {
-          $box.remove();
+      {
+        easing: 'linear',
+        duration: 5000,
+        complete: function() {
+          $( this ).after($box.remove());
+        },
+        step: function() {
+          if (collision($dog, $box)) {
+            $box.remove();
 
 
-          if ($box.hasClass('ball-blue') || $box.hasClass('ball-pink') || $box.hasClass('ball-green') || $box.hasClass('ball-orange')|| $box.hasClass('ball-purple')) {
-            console.log('yey ball!');
-            $score +=10;
-            console.log($score);
+            if ($box.hasClass('ball-blue') || $box.hasClass('ball-pink') || $box.hasClass('ball-green') || $box.hasClass('ball-orange')|| $box.hasClass('ball-purple')) {
 
-          } else if ($box.hasClass('gnome')) {
-            console.log('yey gnome!');
-            $score -=10;
-            console.log($score);
+              console.log('ball ' + $score);
+              $score +=10;
+            } if ($box.hasClass('gnome')) {
+              console.log('gnome ' + $score);
+              $score -=10;
+              if ($score <=0){
+                gameOver();
+              }
 
-          } else if ($box.hasClass('mushroom')) {
-            console.log('yey mushroom!');
-            $health--;
-            $($('.bone')[$health]).hide();
-            if ($health === 0) {
-              console.log('game over');
-              gameOver();
+
+            } else if ($box.hasClass('mushroom')) {
+              console.log('mushroom');
+              $health--;
+              $($('.bone')[$health]).hide();
+              if ($health === 0) {
+                console.log('game over');
+                gameOver();
+              }
+            } else if ($box.hasClass('bone')) {
+              console.log('bone');
+              if ($health !== 3) {
+                $($('.bone')[$health]).show();
+                $health++;
+              }
             }
-          } else if ($box.hasClass('bone')) {
-            console.log('yey bone!');
-            if ($health !== 3) {
-              $($('.bone')[$health]).show();
-              $health++;
-            }
+            $scoreBoard.html($score);
+            endOfGame($box);
           }
-          $scoreBoard.html($score);
-          endOfGame($box);
         }
-      }
-    });
+      });
   }
 
   function endOfGame($box){
     // $scoreBoard.html($score);
-    if ($score <=0) {
-      gameOver($box);
-    } if ($health === 0){
-      gameOver($box);
-    } if ($timer === 0 && $level === 1 && $score >=50){
+    if ($timer === 0 && $level === 1 && $score >=50){
       level1Win($box);
     } if ($timer === 0 && $level === 2 && $score >=350){
       level2Win($box);
@@ -144,7 +140,7 @@ $(() => {
     var w1 = $dog.outerWidth(true);
     var b1 = y1 + h1;
     var r1 = x1 + w1;
-    var x2 = $box.offset().left -50;
+    var x2 = $box.offset().left -100;
     var y2 = $box.offset().top;
     var h2 = $box.outerHeight(true);
     var w2 = $box.outerWidth(true);
@@ -160,17 +156,15 @@ $(() => {
   function countdown() {
     $timer--;
     $timeContainer.html($timer);
-    if ($timer === 0)
-    setTimeout(countdown, 0);
   }
 
   function levelLogic(){
     if ($level === 1)
-    speed = 2000;
+      speed = 2000;
     if ($level === 2)
-    speed = 1500;
+      speed = 1500;
     if ($level === 1)
-    speed = 1000;
+      speed = 1000;
   }
 
   function gameOver($box){
