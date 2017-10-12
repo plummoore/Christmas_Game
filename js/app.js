@@ -15,6 +15,7 @@ let $characters;
 let $gameOver;
 let $endOfLevel;
 let $winner;
+let $restart;
 
 function setup() {
 
@@ -31,11 +32,13 @@ function setup() {
   $gameOver = $('.over');
   $endOfLevel = $('.complete');
   $winner = $('.winner');
+  $restart =$('.restart');
 
   $(document).on('keydown', handleKeyCode);
   $play.click(play);
   $newGame.click(chooseCharacter);
   $playOn.click(playOn);
+  $restart.click(restart);
 }
 
 let $timer = 30;
@@ -140,12 +143,16 @@ function animateObjects($box) {
 
           $scoreBoard.html($score);
 
-          if ($box.hasClass('ball-blue') || $box.hasClass('ball-pink') ||   $box.hasClass('ball-green') || $box.hasClass('ball-orange')||   $box.hasClass('ball-purple')) {
+          // console.log($box.attr('class'));
+
+          if ($box.attr('class').split(' ')[1].split('-')[0] === 'ball') {
+            new Audio('sounds/ball.wav').play();
             $score +=10;
             $scoreBoard.html($score);
+          }
 
-          } if ($box.hasClass('gnome')) {
-            console.log('gnome ' + $score);
+          if ($box.hasClass('gnome')) {
+            new Audio('sounds/gnome.wav').play();
             $score -=10;
             $scoreBoard.html($score);
             if ($score <=0){
@@ -154,6 +161,7 @@ function animateObjects($box) {
 
           } else if ($box.hasClass('mushroom')) {
             $health--;
+            new Audio('sounds/mushroom.wav').play();
             $($('.bone')[$health]).hide();
             if ($health === 0) {
               gameOver();
@@ -161,6 +169,7 @@ function animateObjects($box) {
             }
 
           } else if ($box.hasClass('bone')) {
+            new Audio('sounds/dog.wav').play();
             if ($health !== 3) {
               $($('.bone')[$health]).show();
               $health++;
@@ -222,6 +231,23 @@ function gameOver(){
   clearInterval(falling);
   $gameOver.css({'display': 'block'});
   $endOfLevel.css({'display': 'none'});
+}
+
+function restart(){
+  $gameOver.css({'display': 'none'});
+  $endOfLevel.css({'display': 'none'});
+  $winner.css({'display': 'none'});
+  $game.show($box);
+  level =0;
+  $currentLevel.html(level);
+  $score =10;
+  $scoreBoard.html($score);
+  $health =3;
+  $game.show($box);
+  clearInterval(counter);
+  clearInterval(falling);
+  $timeContainer.html('');
+  $characters.css({'display': 'block'});
 }
 
 $(setup);
