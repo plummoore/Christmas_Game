@@ -3,11 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>PROJECT 1!!!</title>
-  <!-- <link rel="stylesheet" href="css/debug.css"> -->
+  <link rel="stylesheet" href="css/debug.css">
   <link rel="stylesheet" href="css/reset.css">
    <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Ubuntu+Condensed" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Ubuntu+Condensed"
+ rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -57,18 +59,36 @@
       <div>
         <div class="over">
           <h4>GAME OVER</h4>
-          <div class ="overgnome"><img src="images/over-gnome.png"></div>
-          <div><button class="playagain">Play Again</button></div>
+          <div class ="overgnome"><img src="images/over-gnome.png" class ="animated rotateIn"></div>
+          <button class="restart">Play again</button>
         </div>
 
       </div>
       <div class="complete">
-        <div class="level">End of Level <span class="currentlevel"></span></div>
-        <div class="message"></div>
-        <div><button class="continue">Bring on the gnomes!</button></div>
+        <div class="endlevel"><h4>End of Level <span class="currentlevel"></span></h4></div>
+        <div class ="windog">
+          <img src="images/dog1.png" class ="animated tada">
+          <img src="images/dog2.png" class ="animated tada">
+          <img src="images/dog3.png" class ="animated tada">
+          <img src="images/dog4.png" class ="animated tada">
+          <img src="images/dog5.png" class ="animated tada">
+        </div>
+        <h5>Nice one!</h5>
+        <h5>Bring on the gnomes...</h5>
+        <button class="continue">Play on</button>
       </div>
-      <div class="winner"><span class="currentlevel"></span>
-        <div class="level">You win! You beat the gnomes and the bones are all yours!</div>
+
+      <div class="winner">
+        <h5>You've completed level <span class="currentlevel"> Huzzah!</span></h5>
+        <h4>YOU WIN!</h4>
+        <div class ="windog">
+          <img src="images/dog1.png" class ="animated tada">
+          <img src="images/dog2.png" class ="animated tada">
+          <img src="images/dog3.png" class ="animated tada">
+          <img src="images/dog4.png" class ="animated tada">
+          <img src="images/dog5.png" class ="animated tada">
+        </div>
+        <button class="restart">Play again</button>
       </div>
 
     </div>
