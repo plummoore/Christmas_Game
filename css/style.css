@@ -54,8 +54,6 @@ header {
   margin: 43px;
 }
 
-
-
 .play {
   background: #FEF9E7;
   color: black;
@@ -232,7 +230,7 @@ main {
   height: 500px;
   padding: 5px;
   background: #37d1c1;
-  opacity: 0.8;
+  opacity: 0.9;
   text-align: center;
   font-size: 60px;
   margin:50px;
@@ -256,7 +254,7 @@ main {
     height: 500px;
     padding: 10px;
     background: #37d1c1;
-    opacity: 0.8;
+    opacity: 0.9;
     text-align: center;
     font-size: 60px;
     margin:50px;
@@ -291,7 +289,7 @@ main {
     height: 500px;
     padding: 10px;
     background: #37d1c1;
-    opacity: 0.8;
+    opacity: 0.9;
     text-align: center;
     font-size: 60px;
     margin:50px;
@@ -349,36 +347,58 @@ main {
   background: orange;
   margin-bottom: 25px;
   width: 100%;
-  height: 250px;
-  float: right;
+  height: 260px;
+  float: left;
 }
 
-.scoring div{
-  line-height: 70px;
-}
-
-
-.scoring li {
+.image{
+  height: 75px;
+  width: 148px;
+  float: left;
   text-align: center;
+}
+
+.text{
+  height: 30px;
+  line-height: 30px;
+  width: 148px;
+  float: left;
+  text-align: center;
+}
+
+/*.scoring div{
+  line-height: 70px;
+}*/
+
+/*.scoring li {}*/
+
+/*.scoring li img{
   float: left;
   height: 80px;
-  width: 148px;
-  line-height: 80px;
-  margin: 0;
-}
+  width: auto;*/
+  /*line-height: 80px;*/
+  /*margin: 0;*/
+  /*float: left;
+  text-align: left;
+}*/
 
-.objectscores {
+/*.scoring li h3 {
+  float: right;
+  line-height: 80px;
+}*/
+
+/*.objectscores {
   text-align: center;
   margin: 0 auto;
   float: left;
-}
+}*/
 
 .instructions {
   text-align: center;
   background: orange;
   margin-bottom: 25px;
   width: 100%;
-  height: 325px;
+  height: 315px;
   float: right;
 }
 

@@ -139,14 +139,15 @@ function animateObjects($box) {
       },
       step: function() {
         if (collision($dog, $box)) {
-          $box.remove();
+          $box.stop().fadeOut();
+          setTimeout(() => {
+            $box.remove();
+          }, 500);
 
           $scoreBoard.html($score);
 
-          // console.log($box.attr('class'));
-
           if ($box.attr('class').split(' ')[1].split('-')[0] === 'ball') {
-            new Audio('sounds/ball.wav').play();
+            new Audio('sounds/balls.wav').play();
             $score +=10;
             $scoreBoard.html($score);
           }
@@ -162,7 +163,8 @@ function animateObjects($box) {
           } else if ($box.hasClass('mushroom')) {
             $health--;
             new Audio('sounds/mushroom.wav').play();
-            $($('.bone')[$health]).hide();
+            $($('.bone')[$health]).addClass('animated shake').fadeOut(1000);
+            // $($('.bone')[$health]).hide();
             if ($health === 0) {
               gameOver();
               $box.stop();
@@ -171,7 +173,8 @@ function animateObjects($box) {
           } else if ($box.hasClass('bone')) {
             new Audio('sounds/dog.wav').play();
             if ($health !== 3) {
-              $($('.bone')[$health]).show();
+              $($('.bone')[$health]).addClass('animated shake').fadeIn(1000);
+              // $($('.bone')[$health]).show();
               $health++;
             }
           }
@@ -234,19 +237,22 @@ function gameOver(){
 }
 
 function restart(){
-  $gameOver.css({'display': 'none'});
-  $endOfLevel.css({'display': 'none'});
-  $winner.css({'display': 'none'});
-  $game.show($box);
+  $gameOver.hide();
+  $endOfLevel.hide();
+  $winner.hide();
+
   level =0;
   $currentLevel.html(level);
   $score =10;
   $scoreBoard.html($score);
   $health =3;
-  $game.show($box);
+  $timer = 30;
   clearInterval(counter);
   clearInterval(falling);
   $timeContainer.html('');
+
+  $('.box').hide();
+  $game.show($box);
   $characters.css({'display': 'block'});
 }
 
