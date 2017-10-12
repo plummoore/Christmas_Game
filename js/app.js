@@ -16,6 +16,10 @@ let $gameOver;
 let $endOfLevel;
 let $winner;
 let $restart;
+let $levelsTitle;
+let $levels;
+let $howTo;
+let $instructionsTitle;
 
 function setup() {
 
@@ -33,12 +37,19 @@ function setup() {
   $endOfLevel = $('.complete');
   $winner = $('.winner');
   $restart =$('.restart');
+  $instructionsTitle = $('.howto-title');
+  $levelsTitle = $('.levels-title');
+  $levels = $('.levels');
+  $howTo =$('.howto');
 
   $(document).on('keydown', handleKeyCode);
   $play.click(play);
   $newGame.click(chooseCharacter);
   $playOn.click(playOn);
   $restart.click(restart);
+  $levelsTitle.on('click', showLevels);
+  $instructionsTitle.on('click', showInstructions);
+
 }
 
 let $timer = 30;
@@ -256,4 +267,13 @@ function restart(){
   $characters.css({'display': 'block'});
 }
 
+function showLevels(){
+  $levels.toggle();
+  $howTo.hide();
+}
+
+function showInstructions(){
+  $howTo.toggle();
+  $levels.hide();
+}
 $(setup);

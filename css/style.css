@@ -90,8 +90,7 @@ header {
 /*General elements*/
 h1 {
   font-size: 30px;
-  background-color: #ffae19;
-  /*color: #FCFBE3;*/
+  background-color: RGBA(255,174,25, 0.8);
 }
 
 h2 {
@@ -112,7 +111,7 @@ h5{
 }
 
 p {
-  font-size: 18px;
+  font-size: 20px;
   font-family: 'Playfair Display', serif;
 }
 
@@ -345,7 +344,7 @@ main {
 }
 
 .right h3 {
-  line-height: 35px;
+  font-size: 22px;
 }
 
 .scoring {
@@ -367,6 +366,7 @@ main {
 .text{
   height: 30px;
   line-height: 30px;
+  line-height: 30px;
   width: 148px;
   float: left;
   text-align: center;
@@ -381,20 +381,34 @@ main {
   float: right;
 }
 
-.gameplay {
+
+.howto-title {
+  display: block;
+}
+.levels-title {
+  /*display: none;*/
+  border-top: 1px solid #CC00FF;
+  border-bottom: 2px solid #CC00FF !important;
+}
+.howto {
   height: 150px;
   float: left;
   width: 100%;
-  margin: 10px 0 0 0;
+  margin: auto;
   text-align: center;
+  margin: 10px auto;
+  /*display: none;*/
 }
-
 .levels {
   height: 150px;
   position: relative;
   float: left;
   width: 100%;
+  margin: 5px auto;
+  line-height: 60px;
+  display: none;
 }
+
 
 /*Bottom elements*/
 
