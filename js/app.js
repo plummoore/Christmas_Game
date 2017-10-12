@@ -20,6 +20,7 @@ let $levelsTitle;
 let $levels;
 let $howTo;
 let $instructionsTitle;
+let $bone;
 
 function setup() {
 
@@ -41,6 +42,7 @@ function setup() {
   $levelsTitle = $('.levels-title');
   $levels = $('.levels');
   $howTo =$('.howto');
+  $bone = $('.bone');
 
   $(document).on('keydown', handleKeyCode);
   $play.click(play);
@@ -59,7 +61,7 @@ let speed = 1000;
 
 
 function chooseCharacter(){
-  $characters.css({'display': 'block'});
+  $characters.fadeIn(400);
   $characters.on('click',function (e) {
     const selectedDog = $(e.target).attr('src');
     $($dogImg).attr('src', selectedDog);
@@ -72,6 +74,7 @@ function play(){
   $characters.css({'display': 'none'});
   level =1;
   $currentLevel.html(level);
+  showLevels();
   falling = setInterval(animateFall, speed);
   $scoreBoard.html($score);
   counter = setInterval(timer, 1000);
@@ -92,7 +95,9 @@ function playOn(){
   $currentLevel.html(level);
   $score =10;
   $health =3;
+  $bone.show();
   $game.show($box);
+  showLevels();
   $endOfLevel.css({'display': 'none'});
   falling = setInterval(animateFall, speed);
   $scoreBoard.html($score);
@@ -242,6 +247,7 @@ function gameOver(){
   $($allBoxes).stop();
   clearInterval(counter);
   clearInterval(falling);
+  new Audio('sounds/gnome.wav').play();
   $gameOver.css({'display': 'block'});
   $endOfLevel.css({'display': 'none'});
 }
@@ -250,14 +256,15 @@ function restart(){
   $gameOver.hide();
   $endOfLevel.hide();
   $winner.hide();
+  $timer = 30;
   $health =3;
-  $('.bone').show();
+  $bone.show();
   level =0;
   $currentLevel.html(level);
   $score =10;
   $scoreBoard.html($score);
   $health =3;
-  $timer = 30;
+  showInstructions();
   clearInterval(counter);
   clearInterval(falling);
   $timeContainer.html('');
@@ -268,12 +275,12 @@ function restart(){
 }
 
 function showLevels(){
-  $levels.toggle();
+  $levels.show();
   $howTo.hide();
 }
 
 function showInstructions(){
-  $howTo.toggle();
+  $howTo.show();
   $levels.hide();
 }
 $(setup);
