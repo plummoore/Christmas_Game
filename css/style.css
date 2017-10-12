@@ -17,13 +17,13 @@ header {
   height: 60px;
 }
 
-#new {
+.new {
   background: white;
   width: 150px;
-  margin: 5px;
-  height: 50px;
+  margin: 5px 7px;
+  height: 45px;
   float: right;
-  line-height: 50px;
+  line-height: 40px;
   text-align: center;
   font-size: 24px;
   border: 2px solid black;
@@ -83,7 +83,7 @@ h2 {
   font-size: 22px;
 }
 h3 {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 p {
@@ -253,6 +253,18 @@ main {
   float: right;
 }
 
+.right h1 {
+  line-height: 40px;
+}
+
+.right p {
+  line-height: 25px;
+}
+
+.right h3 {
+  line-height: 30px;
+}
+
 .scoring {
   text-align: center;
   background: orange;
@@ -262,14 +274,19 @@ main {
   float: right;
 }
 
+.scoring div{
+  line-height: 70px;
+}
+
+
 .scoring li {
   text-align: center;
-  border: solid black 1px;
-  text-align: center;
+  border-bottom: solid black 1px;
   float: left;
-  height: 120px;
-  width: 120px;
-  margin: 2px 5px;
+  height: 80px;
+  /*line-height: 75px;*/
+  width: 148px;
+  /*margin: 0;*/
 }
 
 .instructions {
@@ -291,13 +308,14 @@ footer {
   border-left: 3px solid black;
   border-right: 3px solid black;
   border-bottom: 3px solid black;
-  line-height: 50px;
+  line-height: 40px;
   height: 50px;
   clear: both;
 }
 
 .footer {
   float: right;
+  margin: 5px;
 }
 
 /*OBJECTS FOR GAME*/
