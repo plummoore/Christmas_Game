@@ -5,14 +5,10 @@
   <title>PROJECT 1!!!</title>
   <!-- <link rel="stylesheet" href="css/debug.css"> -->
   <link rel="stylesheet" href="css/reset.css">
-   <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Ubuntu+Condensed"
- rel="stylesheet">
- <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
- <!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> -->
- <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Playfair+Display" rel="stylesheet">
-<script
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Playfair+Display|Bree+Serif|Hammersmith+One" rel="stylesheet">
+  <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
@@ -32,12 +28,10 @@
       </ul>
       <button class="play">Play</button></div>
     </div>
-
   </header>
   <main>
     <!-- LEFT ELEMENTS -->
     <div class="left">
-
       <div class="level"><h1>Level</h1><div class="currentlevel"></div></div>
       <div class="timer"><h1>Timer</h1><div class="countdown"></div></div>
       <div  class="health"><h1>Health</h1>
@@ -53,21 +47,18 @@
     <!-- GAME ELEMENT -->
 
     <div class="center">
-
       <div class="game">
         <div class ="dog"><img src="images/dog1.png"></div>
       </div>
-
       <div>
         <div class="over">
           <h4>GAME OVER</h4>
           <div class ="overgnome"><img src="images/over-gnome.png" class ="animated rotateIn"></div>
           <button class="restart">Play again</button>
         </div>
-
       </div>
       <div class="complete">
-        <div class="endlevel"><h4>End of Level <span class="currentlevel"></span></h4></div>
+        <div class="endlevel"><h4>End of Level <spanclass="currentlevel"></span></h4></div>
         <div class ="windog">
           <img src="images/dog1.png" class ="animated tada">
           <img src="images/dog2.png" class ="animated tada">
@@ -79,7 +70,6 @@
         <h5>Bring on the gnomes...</h5>
         <button class="continue">Play on</button>
       </div>
-
       <div class="winner">
         <h5>You've completed level <span class="currentlevel"> Huzzah!</span></h5>
         <h4>YOU WIN!</h4>
@@ -92,56 +82,46 @@
         </div>
         <button class="restart">Play again</button>
       </div>
-
     </div>
-
 
     <!-- RIGHT ELEMENTS -->
 
     <div class="right">
       <div class="scoring">
         <h1>Scoring</h1>
-        <div>
-        <ul>
-          <li class="image"><img src="images/balls-small.png"></li>
-          <li class="image"><img src="images/bone-small.png"></li>
-          <li class="text"><h3>+10 points</h3></li>
-          <li class="text"><h3>+ health</h3></li>
-          <li class="image"><img src="images/gnome-small.png">
-          <li class="image"><img src="images/mushroom-small.png">
-          <li class="text"><h3>-10 points</h3></li>
-          <li class="text"><h3>-health</h3></li>
-        </ul>
+        <div><ul>
+            <li class="image"><img src="images/balls-small.png"></li>
+            <li class="image"><img src="images/bone-small.png"></li>
+            <li class="text"><h3>+10 points</h3></li>
+            <li class="text"><h3>+ health</h3></li>
+            <li class="image"><img src="images/gnome-small.png">
+              <li class="image"><img src="images/mushroom-small.png">
+                <li class="text"><h3>-10 points</h3></li>
+                <li class="text"><h3>- health</h3></li></ul>
+            </div>
+          </div>
+          <div class="instructions">
+            <div class="howto-title"><h1> -- Instructions -- </h1></div>
+            <div class="levels-title"><h1> -- Levels -- </h1></div>
+            <ul class="howto">
+              <li><p>1.Choose your dog.</p></li>
+              <li><p>2. Use your arrow keys &#8678  &#8680 to navigate.</p></li>
+              <li><p>3. Collect as many balls & bones as you can.</p></li>
+              <li><p>4. Avoid the gnomes & poisonous mushrooms.</p></li>
+              <li><p>5. You have 30secs to complete each level.</p></li>
+            </ul>
+            <ul class="levels">
+              <li><h3>LEVEL 1 - collect 100 points</h3></li>
+              <li><h3>LEVEL 2 - collect 150 points</h3></li>
+              <li><h3>LEVEL 3 - collect 250 points</h3></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-
-      <div class="instructions">
-        <div class="howto-title"><h1> -- Instructions -- </h1></div>
-        <div class="levels-title"><h1> -- Levels -- </h1></div>
-        <ul class="howto">
-          <li><p>1.Choose your dog.</p></li>
-          <li><p>2. Use your arrow keys &#8678  &#8680 to navigate.</p></li>
-          <li><p>3. Collect as many balls & bones as you can.</p></li>
-          <li><p>4. Avoid the gnomes & poisonous mushrooms.</p></li>
-          <li><p>5. You have 30secs to complete each level.</p></li>
-        </ul>
-        <ul class="levels">
-          <li><h3>LEVEL 1 - collect 100 points</h3></li>
-          <li><h3>LEVEL 2 - collect 150 points</h3></li>
-          <li><h3>LEVEL 3 - collect 250 points</h3></li>
-        </ul>
-      </div>
-      </div>
-    </div>
-
-  </div>
-</main>
-
-<footer>
-  <h2><div class="footer">Made with <span class="heart">&hearts;</span> by Plum @ General Assembly</div></h2>
-</footer>
-
-
-
+  </main>
+  <footer>
+    <h2><div class="footer">Made with <span class="heart">&hearts;</span> by Plum @ General Assembly</div></h2>
+  </footer>
 </body>
 </html>

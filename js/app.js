@@ -283,4 +283,5 @@ function showInstructions(){
   $howTo.show();
   $levels.hide();
 }
+
 $(setup);
