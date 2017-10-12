@@ -64,7 +64,7 @@ function chooseCharacter(){
     const selectedDog = $(e.target).attr('src');
     $($dogImg).attr('src', selectedDog);
     new Audio('sounds/dog.wav').play();
-    $($dogImg).attr('class', 'animated rotateIn');
+    $($dogImg).attr('class', 'animated tada');
   });
 }
 
