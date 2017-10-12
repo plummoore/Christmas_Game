@@ -49,7 +49,6 @@ function setup() {
   $restart.click(restart);
   $levelsTitle.on('click', showLevels);
   $instructionsTitle.on('click', showInstructions);
-
 }
 
 let $timer = 30;
@@ -64,6 +63,8 @@ function chooseCharacter(){
   $characters.on('click',function (e) {
     const selectedDog = $(e.target).attr('src');
     $($dogImg).attr('src', selectedDog);
+    new Audio('sounds/dog.wav').play();
+    $($dogImg).attr('class', 'animated rotateIn');
   });
 }
 
@@ -175,7 +176,6 @@ function animateObjects($box) {
             $health--;
             new Audio('sounds/mushroom.wav').play();
             $($('.bone')[$health]).addClass('animated shake').fadeOut(1000);
-            // $($('.bone')[$health]).hide();
             if ($health === 0) {
               gameOver();
               $box.stop();
@@ -185,7 +185,6 @@ function animateObjects($box) {
             new Audio('sounds/dog.wav').play();
             if ($health !== 3) {
               $($('.bone')[$health]).addClass('animated shake').fadeIn(1000);
-              // $($('.bone')[$health]).show();
               $health++;
             }
           }
@@ -251,7 +250,8 @@ function restart(){
   $gameOver.hide();
   $endOfLevel.hide();
   $winner.hide();
-
+  $health =3;
+  $('.bone').show();
   level =0;
   $currentLevel.html(level);
   $score =10;
