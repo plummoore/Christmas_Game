@@ -230,7 +230,7 @@ function collision ($dog, $box) {
   var w1 = $dog.outerWidth(true);
   var b1 = y1 + h1;
   var r1 = x1 + w1;
-  var x2 = $box.offset().left -100;
+  var x2 = $box.offset().left -90;
   var y2 = $box.offset().top;
   var h2 = $box.outerHeight(true);
   var w2 = $box.outerWidth(true);
