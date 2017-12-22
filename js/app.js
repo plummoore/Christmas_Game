@@ -46,16 +46,16 @@ function setup() {
   $bone = $('.bone');
 
   $(document).on('keydown', handleKeyCode);
-  // $($game).on('mousedown', handleMouseDown);
-  let int;
-  $($game).mousedown(function(e){
-    console.log('mousedown');
-    int = setInterval(() => handleMouseDown(e), 100);
-  });
-  $($game).mouseup(function(){
-    console.log('mouseup');
-    clearInterval(int);
-  });
+  $($game).on('mousedown', handleMouseDown);
+  // let int;
+  // $($game).mousedown(function(e){
+  //   console.log('mousedown');
+  //   int = setInterval(() => handleMouseDown(e), 100);
+  // });
+  // $($game).mouseup(function(){
+  //   console.log('mouseup');
+  //   clearInterval(int);
+  // });
 
 
   $play.click(play);
