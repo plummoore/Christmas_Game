@@ -26,6 +26,7 @@ function setup() {
 
   $dog = $('.dog');
   $dogImg = $('.dog img');
+  // $dogImg = $('.slider');
   $timeContainer = $('.countdown');
   $game = $('.game');
   $scoreBoard = $('.currentpoints');
@@ -45,6 +46,18 @@ function setup() {
   $bone = $('.bone');
 
   $(document).on('keydown', handleKeyCode);
+  $($game).on('mousedown', handleMouseDown);
+  // let int;
+  // $($game).mousedown(function(e){
+  //   console.log('mousedown');
+  //   int = setInterval(handleMouseClick(e), 800);
+  // });
+  // $($game).mouseup(function(){
+  //   console.log('mouseup');
+  //   clearInterval(int);
+  // });
+
+
   $play.click(play);
   $newGame.click(chooseCharacter);
   $playOn.click(playOn);
@@ -122,9 +135,19 @@ function handleKeyCode(e) {
   if (e.keyCode === 39 && dogLeftValue !== 500) handlePlayerMovement('+');
 }
 
+function handleMouseDown(e) {
+  const dogLeftValue = parseInt($dog.css('left'));
+
+  if (e.offsetX <= 300 && dogLeftValue !== 0) handleMobilePlayerMovement('-');
+  if (e.offsetX > 300 && dogLeftValue !== 500) handleMobilePlayerMovement('+');
+}
+
 function handlePlayerMovement(operation) {
   $dog.animate({ 'left': `${operation}=20` }, 0);
+}
 
+function handleMobilePlayerMovement(operation) {
+  $dog.animate({ 'left': `${operation}=50` }, 0).transition = 'all 2s';
 }
 
 function randomWidth($box) {
