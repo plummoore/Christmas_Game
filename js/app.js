@@ -46,16 +46,16 @@ function setup() {
   $bone = $('.bone');
 
   $(document).on('keydown', handleKeyCode);
-  $($game).on('mousedown', handleMouseDown);
-  // let int;
-  // $($game).mousedown(function(e){
-  //   console.log('mousedown');
-  //   int = setInterval(() => handleMouseDown(e), 100);
-  // });
-  // $($game).mouseup(function(){
-  //   console.log('mouseup');
-  //   clearInterval(int);
-  // });
+  // $($game).on('mousedown', handleMouseDown);
+  let int;
+  $($game).click(function(e){
+    console.log('mousedown');
+    int = setInterval(() => handleMouseDown(e), 100);
+  });
+  $($game).mouseup(function(){
+    console.log('mouseup');
+    clearInterval(int);
+  });
 
 
   $play.click(play);
@@ -137,8 +137,16 @@ function handleKeyCode(e) {
 
 function handleMouseDown(e) {
   const dogLeftValue = parseInt($dog.css('left'));
+  let dogPosition = $dog.offset().left
 
   if (e.offsetX <= 300 && dogLeftValue !== 0) handleMobilePlayerMovement('-');
+  // if (e.offsetX <= dogPosition && dogLeftValue !== 0) {
+  //   console.log('CLICK', e.offsetX, 'DOG LEFT', dogPosition);
+  //   handleMobilePlayerMovement('-');
+  // } else if (e.offsetX >= dogPosition && dogLeftValue !== 500) {
+  //   console.log('CLICK', e.offsetX, 'DOG RIGHT', dogPosition);
+  //   handleMobilePlayerMovement('+');
+  // }
   if (e.offsetX > 300 && dogLeftValue !== 500) handleMobilePlayerMovement('+');
 }
 
@@ -148,7 +156,7 @@ function handlePlayerMovement(operation) {
 
 function handleMobilePlayerMovement(operation) {
   console.log('moving');
-  $dog.animate({ 'left': `${operation}=50` }, 0).transition ='all 2s';
+  $dog.animate({ 'left': `${operation}=25` }, 0).transition ='all 2s';
 }
 
 function randomWidth($box) {
