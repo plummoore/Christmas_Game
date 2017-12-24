@@ -2,7 +2,7 @@
 header {
   width: 1300px;
   margin: 0 auto;
-  background: #FFCA28;
+  background: gold;
   /*border: 3px solid black;*/
   border-left: 3px solid black;
   border-right: 3px solid black;
@@ -21,7 +21,7 @@ header {
   text-align: center;
   font-size: 26px;
   border-radius: 60px;
-  border: 4px solid #CC00FF;;
+  border: 4px solid #CC00FF;
 }
 
 .new:hover {
@@ -47,18 +47,26 @@ header {
   line-height: 50px;
 }
 
-.characters ul {
+/*.characters{
   height: 200px;
   width: 900px;
   margin: 0 auto;
-}
+}*/
 .characters li {
   text-align: center;
   float: left;
   height: 150px;
   width: auto;
-  margin: 43px;
+  margin: 40px 15px;
 }
+
+/*ul.row1 {
+  text-align: center;
+  float: left;
+  height: 150px;
+  width: auto;
+  margin: 43px;
+}*/
 
 .play {
   font-family: 'Abril Fatface', cursive;
@@ -83,8 +91,8 @@ header {
 
 .continue {
   font-family: 'Abril Fatface', cursive;
-  background: white;
-  color: black;
+  background: #CC00FF;
+  color: white;
   width: 150px;
   margin: 5px 173px 10px 0;
   height: 50px;
@@ -93,19 +101,22 @@ header {
   text-align: center;
   font-size: 24px;
   border-radius: 60px;
-  border: 4px solid #CC00FF;;
+  border: 4px solid black;
 }
 
 .continue:hover {
-  background: #CC00FF;
-  color: white;
+  background: white;
+  color: black;
+  border: 4px solid #CC00FF;
 }
 
 
 /*General elements*/
 h1 {
   font-size: 30px;
-  background-color: RGBA(255,174,25, 0.8);
+  /*background-color: #66CD00;*/
+  /*background-color: RGBA(0,128,0, 0.7);*/
+  background-color: RGBA(255,165,0, 0.5);
 }
 
 h2 {
@@ -121,7 +132,7 @@ h4{
 }
 
 h5{
-  font-size: 50px;
+  font-size: 32px;
   font-family: 'Hammersmith One', sans-serif;
 }
 
@@ -137,6 +148,8 @@ main {
   border: 3px solid black;
   clear:both;
   font-family: 'Bree Serif', serif;
+  /*background: orange;*/
+  background: #66CD00;
 }
 
 /*Left elements*/
@@ -154,6 +167,7 @@ main {
 
 .level {
   width: 100%;
+  /*background: #66CD00;*/
   background: orange;
   float: left;
   text-align: center;
@@ -171,6 +185,7 @@ main {
 
 .timer {
   width: 100%;
+  /*background: #66CD00;*/
   background: orange;
   float: left;
   text-align: center;
@@ -188,6 +203,7 @@ main {
 
 .health {
   text-align: center;
+  /*background: #66CD00;*/
   background: orange;
   height: 140px;
   width: 100%;
@@ -205,6 +221,7 @@ main {
 
 .points {
   text-align: center;
+  /*background: #66CD00;*/
   background: orange;
   margin-bottom: 25px;
   width: 100%;
@@ -234,6 +251,7 @@ main {
   background-image: url('../images/background.png');
   background-size: cover;
   position: absolute;
+  border: 3px solid black;
 }
 
 .dog {
@@ -247,7 +265,7 @@ main {
   width: 500px;
   height: 500px;
   padding: 5px;
-  background: #37d1c1;
+  background: #66CD00;
   opacity: 0.9;
   text-align: center;
   font-size: 60px;
@@ -255,7 +273,7 @@ main {
   z-index: 1;
   position: absolute;
   border-radius: 70px;
-  border: 2px solid black;
+  border: 3px solid black;
   display: none;
 }
 
@@ -271,7 +289,8 @@ main {
   width: 500px;
   height: 500px;
   padding: 10px;
-  background: #37d1c1;
+  background: white;
+  /*background: #66CD00;*/
   opacity: 0.9;
   text-align: center;
   font-size: 60px;
@@ -279,22 +298,32 @@ main {
   z-index: 1;
   position: absolute;
   border-radius: 70px;
-  border: 2px solid black;
+  border: 3px solid black;
   line-height: 70px;
   display: none;
 }
 
-.windog img{
-  height: 130px;
-  width: auto;
+.windog1{
+  margin-bottom: -40px;
+  margin-top: -20px;
 }
+
+.windog2{
+  margin-top: -40px;
+  margin-bottom: -55px;
+}
+
+/*.windog img{
+  height: 80px;
+  width: auto;
+}*/
 
 
 .winner {
   width: 500px;
   height: 500px;
   padding: 10px;
-  background: #37d1c1;
+  background: #66CD00;
   opacity: 0.9;
   text-align: center;
   font-size: 60px;
@@ -302,7 +331,7 @@ main {
   z-index: 1;
   position: absolute;
   border-radius: 70px;
-  border: 2px solid black;
+  border: 3px solid black;
   line-height: 70px;
   display: none;
 }
@@ -421,7 +450,7 @@ footer {
   font-family: 'Playfair Display', serif;
   width: 1300px;
   margin: 0 auto;
-  background: #FFCA28;
+  background: gold;
   border-left: 3px solid black;
   border-right: 3px solid black;
   border-bottom: 3px solid black;
@@ -446,44 +475,44 @@ footer {
 }
 
 .ball-blue {
-  width: 55px;
-  height: 55px;
+  width: 75px;
+  height: 56px;
   top: -10px;
   background-image: url("../images/ball-blue.png");
 }
 
 .ball-green {
-  width: 55px;
-  height: 55px;
+  width: 75px;
+  height: 56px;
   top: -10px;
   background-image: url("../images/ball-green.png");
 }
 
 .ball-orange {
-  width: 55px;
-  height: 55px;
+  width: 75px;
+  height: 56px;
   top: -10px;
   background-image: url("../images/ball-orange.png");
 }
 
 .ball-pink {
-  width: 55px;
-  height: 55px;
+  width: 75px;
+  height: 56px;
   top: -10px;
   background-image: url("../images/ball-pink.png");
 }
 
 .ball-purple {
-  width: 55px;
-  height: 55px;
+  width: 75px;
+  height: 56px;
   top: -10px;
   background-image: url("../images/ball-purple.png");
 }
 
 
 .bone {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   top: -10px;
   background-image: url("../images/bone.png");
 }
@@ -496,8 +525,8 @@ footer {
 }
 
 .mushroom {
-  width: 60px;
-  height: 56px;
+  width: 65px;
+  height: 65px;
   top: -10px;
   background-image: url("../images/mushroom.png");
 }
