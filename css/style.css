@@ -2,7 +2,8 @@
 header {
   width: 1300px;
   margin: 0 auto;
-  background: gold;
+  background: orange;
+  /*background: gold;*/
   /*border: 3px solid black;*/
   border-left: 3px solid black;
   border-right: 3px solid black;
@@ -33,7 +34,10 @@ header {
   width: 1300px;
   height: 350px;
   margin: 0 auto;
-  background: gold;
+  /*background: gold;*/
+  background-color: RGBA(255,215,0, 1);
+  /*background-color: RGBA(255,165,0, 0.6);*/
+  /*background: url("https://previews.123rf.com/images/mereutaandrei/mereutaandrei1212/mereutaandrei121200031/16755204-gold-background-glitter-texture-Stock-Photo.jpg");*/
   display: none;
   float: left;
   position: fixed;
@@ -117,6 +121,7 @@ h1 {
   /*background-color: #66CD00;*/
   /*background-color: RGBA(0,128,0, 0.7);*/
   background-color: RGBA(255,165,0, 0.5);
+  border-radius: 25px 25px 0 0;
 }
 
 h2 {
@@ -148,8 +153,12 @@ main {
   border: 3px solid black;
   clear:both;
   font-family: 'Bree Serif', serif;
-  /*background: orange;*/
-  background: #66CD00;
+  /*background: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX8264814.jpg");*/
+  /*background: url("https://previews.123rf.com/images/mereutaandrei/mereutaandrei1212/mereutaandrei121200031/16755204-gold-background-glitter-texture-Stock-Photo.jpg");*/
+  background: white;
+  /*background: #66CD00;*/
+  /*background: #66CD00;*/
+
 }
 
 /*Left elements*/
@@ -168,12 +177,15 @@ main {
 .level {
   width: 100%;
   /*background: #66CD00;*/
-  background: orange;
+  background: #89E309;
+  /*background: orange;*/
   float: left;
   text-align: center;
   height: 105px;
   margin-bottom: 25px;
   font-size: 30px;
+  /*border: 2px solid #89E309;*/
+  border-radius: 25px;
 }
 
 .currentlevel {
@@ -186,12 +198,14 @@ main {
 .timer {
   width: 100%;
   /*background: #66CD00;*/
-  background: orange;
+  background: #89E309;
+  /*background: orange;*/
   float: left;
   text-align: center;
   height: 140px;
   margin-bottom: 25px;
   font-size: 30px;
+  border-radius: 25px;
 }
 
 .countdown {
@@ -204,11 +218,13 @@ main {
 .health {
   text-align: center;
   /*background: #66CD00;*/
-  background: orange;
+  background: #89E309;
+  /*background: orange;*/
   height: 140px;
   width: 100%;
   margin-bottom: 25px;
   float: left;
+  border-radius: 25px;
 }
 
 .health li {
@@ -222,11 +238,13 @@ main {
 .points {
   text-align: center;
   /*background: #66CD00;*/
-  background: orange;
+  background: #89E309;
+  /*background: orange;*/
   margin-bottom: 25px;
   width: 100%;
   height: 140px;
   float: left;
+  border-radius: 25px;
 }
 
 .currentpoints {
@@ -251,7 +269,9 @@ main {
   background-image: url('../images/background.png');
   background-size: cover;
   position: absolute;
-  border: 3px solid black;
+  /*padding: -5px;*/
+  border: 5px solid orange;
+  border-radius: 25px;
 }
 
 .dog {
@@ -265,14 +285,14 @@ main {
   width: 500px;
   height: 500px;
   padding: 5px;
-  background: #66CD00;
+  background-color: RGBA(255,215,0, 1);
   opacity: 0.9;
   text-align: center;
   font-size: 60px;
   margin:50px;
   z-index: 1;
   position: absolute;
-  border-radius: 70px;
+  border-radius: 50px;
   border: 3px solid black;
   display: none;
 }
@@ -289,63 +309,58 @@ main {
   width: 500px;
   height: 500px;
   padding: 10px;
-  background: white;
+  /*background: white;*/
+  background-color: RGBA(255,215,0, 1);
   /*background: #66CD00;*/
   opacity: 0.9;
   text-align: center;
-  font-size: 60px;
+  font-size: 50px;
   margin:50px;
   z-index: 1;
   position: absolute;
-  border-radius: 70px;
+  border-radius: 50px;
   border: 3px solid black;
-  line-height: 70px;
+  line-height: 60px;
   display: none;
 }
 
-.windog1{
-  margin-bottom: -40px;
-  margin-top: -20px;
+.windog{
+  margin: 20px;
 }
 
-.windog2{
-  margin-top: -40px;
-  margin-bottom: -55px;
-}
-
-/*.windog img{
-  height: 80px;
+.windog img{
+  height: 150px;
   width: auto;
-}*/
+}
 
 
 .winner {
   width: 500px;
   height: 500px;
   padding: 10px;
-  background: #66CD00;
+  background-color: RGBA(255,215,0, 1);
   opacity: 0.9;
   text-align: center;
-  font-size: 60px;
+  font-size: 50px;
   margin:50px;
   z-index: 1;
   position: absolute;
-  border-radius: 70px;
+  border-radius: 50px;
   border: 3px solid black;
-  line-height: 70px;
+  line-height: 60px;
   display: none;
 }
 
-.winner img {
-  height: 130px;
+/*.winner img {
+  height: 150px;
   width: auto;
   margin: 30px 0;
-}
+}*/
 
 .restart {
   font-family: 'Abril Fatface', cursive;
-  background: white;
-  color: black;
+  background: #CC00FF;
+  color: white;
   width: 160px;
   margin-bottom: 30px;
   margin: 0 165px;
@@ -354,12 +369,13 @@ main {
   text-align: center;
   font-size: 26px;
   border-radius: 60px;
-  border: 4px solid #CC00FF;;
+  border: 4px solid black;
 }
 
 .restart:hover {
-  background: #CC00FF;
-  color: white;
+  background: white;
+  color: black;
+  border: 4px solid #CC00FF;
 }
 
 
@@ -385,11 +401,13 @@ main {
 
 .scoring {
   text-align: center;
-  background: orange;
+  background: #89E309;
+  /*background: orange;*/
   margin-bottom: 25px;
   width: 100%;
   height: 260px;
   float: left;
+  border-radius: 25px;
 }
 
 .image{
@@ -410,19 +428,21 @@ main {
 
 .instructions {
   text-align: center;
-  background: orange;
+  background: #89E309;
+  /*background: orange;*/
   margin-bottom: 25px;
   width: 100%;
   height: 315px;
   float: right;
+  border-radius: 25px;
 }
 
 .howto-title {
   display: block;
 }
 .levels-title {
-  border-top: 1px solid #CC00FF;
-  border-bottom: 2px solid #CC00FF !important;
+  border-top: 3px solid orange;
+  border-bottom: 3px solid orange !important;
 }
 .howto {
   height: 150px;
@@ -450,7 +470,8 @@ footer {
   font-family: 'Playfair Display', serif;
   width: 1300px;
   margin: 0 auto;
-  background: gold;
+  background: orange;
+  /*background: gold;*/
   border-left: 3px solid black;
   border-right: 3px solid black;
   border-bottom: 3px solid black;
